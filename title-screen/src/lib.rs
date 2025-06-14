@@ -4,18 +4,30 @@
 //rust is an inverted y-axis engine
 //As y goes towards positive infinity, the position goes down the screen.
 
+const BUTTON_COLOR: u32 = 0x4169e1ff;
 
 turbo::go!({
+    
     text!(
         "Hello, to the bueatiful turbo world!!",
         x = 50,
         y = 50,
         font = "medium");
     
-    rect!(
-        w = 20,
-        h = 20,
-        x = 40,
-        y = 60
-    );
+    draw_button(20, 20, 40, 60);
+    
 });
+
+fn draw_button(w: i32, h: i32, x: i32, y: i32){
+    let mut buttonTween = Tween::new(0.0);
+    
+    buttonTween.set(20.0); 
+    rect!(
+        w = w,
+        h = h,
+        x = x,
+        y = y,
+        color = BUTTON_COLOR,
+        border_radius = 2
+    );;
+}
