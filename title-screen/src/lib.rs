@@ -4,43 +4,11 @@
 //rust is an inverted y-axis engine
 //As y goes towards positive infinity, the position goes down the screen.
 
-const BUTTON_COLOR: u32 = 0x4169e1ff;
 
-
-turbo::go!({
+turbo::go!({ //this is Update - runs 60 times per second.
     
-    clear(0x00ffffff);
+    sprite!("Worms_all2", x = 0, y = 0); //rust macro that draws a sprite. this draws
     
-    
-    let canvas_bounds = bounds::canvas();
-    
-    sprite!("Worms_all2", x = 0, y = 0);
-    
-    //sprite!("Worms_all2", x = 128, y = 72);
-
-    text!(
-        "Hello, to the bueatiful turbo world!!",
-        x = 50,
-        y = 50,
-        font = "medium");
-    
-    draw_button(60, 20, 150, 30);
+    sprite!("Button", x = 85, y = 10); //draws the button sprite on the screen.
     
 });
-
-fn draw_button(w: i32, h: i32, x: i32, y: i32){
-    
-    
-    
-    let mut buttonTween = Tween::new(0.0);
-    
-    buttonTween.set(20.0); 
-    rect!(
-        w = w,
-        h = h,
-        x = x,
-        y = y,
-        color = BUTTON_COLOR,
-        border_radius = 2
-    );;
-}
