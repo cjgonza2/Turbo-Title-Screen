@@ -14,7 +14,7 @@ turbo::go!({
     
     let canvas_bounds = bounds::canvas();
     
-    sprite!("justworms", x = 0, y = 0);
+    sprite!("Worms_all2", x = 0, y = 0);
     
     //sprite!("Worms_all2", x = 128, y = 72);
 
