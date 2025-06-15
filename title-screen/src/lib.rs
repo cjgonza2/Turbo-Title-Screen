@@ -8,6 +8,11 @@
 
 turbo::go!({ //this is Update - runs 60 times per second.
 
+    if !audio::is_playing("Bloopin") {
+        audio::play("Bloopin");
+}
+    
+    
     //this will get drawn first.
     sprite!("Worms_all2", x = 0, y = 0); //rust macro that draws a sprite. this draws the background.
     //
