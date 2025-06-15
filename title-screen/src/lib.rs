@@ -41,5 +41,6 @@ turbo::go!({ //this is Update - runs 60 times per second.
     
     if(is_btn_hovered && p.pressed()){ //if we intersect and press our pointer,
         sprite!("Button_press", x = 85, y = 10); //we change the sprite.
+        audio::play("splooge");
     }
 });
